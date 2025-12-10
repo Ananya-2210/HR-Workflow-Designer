@@ -18,12 +18,16 @@ export const StartNode: React.FC<Props> = ({ data, selected }) => {
       background: 'linear-gradient(135deg, #ecfdf3 0%, #dcfce7 100%)',
       minWidth: '140px',
       textAlign: 'center',
-      boxShadow: elevate ? '0 14px 34px rgba(34, 197, 94, 0.35)' : '0 10px 28px rgba(34, 197, 94, 0.25)',
+      boxShadow: elevate ? '0 18px 42px 0 rgba(34,197,94,0.19), 0 1.2px 14px #22c55e48' : '0 7px 21px rgba(34,197,94,0.11)',
       position: 'relative',
-      transform: elevate ? 'translateY(-2px) scale(1.01)' : 'translateY(0) scale(1)',
-      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-      borderColor: elevate ? '#16a34a' : '#22c55e'
+      transition: 'transform 0.23s cubic-bezier(0.44,0,0.56,1), box-shadow 0.20s',
+      transform: elevate ? 'translateY(-2px) scale(1.019)' : 'translateY(0) scale(1)',
+      borderColor: elevate ? '#16a34a' : '#22c55e',
+      animation: 'fadeGrow 0.38s cubic-bezier(.32,0,.67,0) 1',
+      outline: selected ? '2.5px solid #6ee7b7' : undefined,
+      zIndex: elevate ? 3 : 2
     }}
+    aria-label={data.title}
     onMouseEnter={() => setHovered(true)}
     onMouseLeave={() => setHovered(false)}
     >

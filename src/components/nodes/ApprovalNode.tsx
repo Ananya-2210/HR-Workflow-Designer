@@ -13,16 +13,20 @@ export const ApprovalNode: React.FC<Props> = ({ data, selected }) => {
   return (
     <div style={{
       padding: '16px 20px',
-      borderRadius: '12px',
-      border: '1.5px solid #fb923c',
+      borderRadius: '18px',
+      border: '2.5px solid #fb923c',
       background: 'linear-gradient(135deg, #fff7ed 0%, #fff1e0 100%)',
-      minWidth: '200px',
-      boxShadow: elevate ? '0 18px 34px rgba(251, 146, 60, 0.24)' : '0 14px 30px rgba(251, 146, 60, 0.2)',
+      minWidth: '220px',
+      boxShadow: elevate ? '0 20px 46px 0 rgba(251,146,60,0.18), 0 1.2px 14px #fb923c44' : '0 7px 19px rgba(251,146,60,0.14)',
       position: 'relative',
-      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-      transform: elevate ? 'translateY(-2px) scale(1.01)' : 'translateY(0) scale(1)',
-      borderColor: elevate ? '#f97316' : '#fb923c'
+      transition: 'transform 0.23s cubic-bezier(0.44,0,0.56,1), box-shadow 0.20s',
+      transform: elevate ? 'translateY(-3px) scale(1.018)' : 'translateY(0) scale(1)',
+      borderColor: elevate ? '#f97316' : '#fb923c',
+      animation: 'fadeGrow 0.37s cubic-bezier(.32,0,.67,0) 1',
+      outline: selected ? '2.5px solid #fdba74' : undefined,
+      zIndex: elevate ? 3 : 2
     }}
+    aria-label={data.title}
     onMouseEnter={() => setHovered(true)}
     onMouseLeave={() => setHovered(false)}
     >

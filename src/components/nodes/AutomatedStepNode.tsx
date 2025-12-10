@@ -13,16 +13,20 @@ export const AutomatedStepNode: React.FC<Props> = ({ data, selected }) => {
   return (
     <div style={{
       padding: '16px 20px',
-      borderRadius: '12px',
-      border: '1.5px solid #a855f7',
+      borderRadius: '18px',
+      border: '2.5px solid #a855f7',
       background: 'linear-gradient(135deg, #f5f3ff 0%, #f3e8ff 100%)',
-      minWidth: '200px',
-      boxShadow: elevate ? '0 18px 34px rgba(168, 85, 247, 0.24)' : '0 14px 30px rgba(168, 85, 247, 0.2)',
+      minWidth: '220px',
+      boxShadow: elevate ? '0 20px 48px 0 rgba(168,85,247,0.18), 0 1.2px 16px #a855f748' : '0 7px 21px rgba(168,85,247,0.13)',
       position: 'relative',
-      transition: 'transform 0.15s ease, box-shadow 0.15s ease',
-      transform: elevate ? 'translateY(-2px) scale(1.01)' : 'translateY(0) scale(1)',
-      borderColor: elevate ? '#9333ea' : '#a855f7'
+      transition: 'transform 0.23s cubic-bezier(0.44,0,0.56,1), box-shadow 0.20s',
+      transform: elevate ? 'translateY(-3px) scale(1.017)' : 'translateY(0) scale(1)',
+      borderColor: elevate ? '#9333ea' : '#a855f7',
+      animation: 'fadeGrow 0.38s cubic-bezier(.32,0,.67,0) 1',
+      outline: selected ? '2.5px solid #d8b4fe' : undefined,
+      zIndex: elevate ? 3 : 2
     }}
+    aria-label={data.title}
     onMouseEnter={() => setHovered(true)}
     onMouseLeave={() => setHovered(false)}
     >
