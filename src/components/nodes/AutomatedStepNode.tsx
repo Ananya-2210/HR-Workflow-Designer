@@ -45,7 +45,7 @@ export const AutomatedStepNode: React.FC<Props> = ({ data, selected }) => {
       />
       
       <div style={{ fontWeight: 'bold', color: '#6A1B9A', marginBottom: '8px', fontSize: '14px' }}>
-        ⚙️ {data.title}
+         {data.title}
       </div>
       
       {data.actionId && (
